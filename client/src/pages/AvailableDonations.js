@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Card from "../components/Card/index";
 import axios from "axios"
 
@@ -15,7 +15,7 @@ class AvailableDonations extends Component {
     componentDidMount() {
         axios.get('/api/inventory', {
             params: {
-                isClaimed: false
+                isClaimed: null
             }
         })
             .then(res => {
@@ -51,45 +51,14 @@ class AvailableDonations extends Component {
 
     render() {
         return (
-            <Card>
-            </Card>
-            // <div className="card text-center">
-            //     <div className="card-header">
-            //         <h2>{this.state.foodItemDescription}</h2>
-            //     </div>
-            //     <div className="card-body">{this.state.amount}
-            //         <br></br>
-            //         {this.state.storageReqs}
-            //         <br></br>
-            //         {this.state.donationComments}
-            //         <ClaimBtn
-            //             onClick={this.ClaimDonation}
-            //         >
-            //         </ClaimBtn>
-            //     </div>
-            // </div>
-
-
-
-
-            //   <div className="container">
-            //     <div className="jumbotron mt-5">
-            //       <div className="col-sm-8 mx-auto">
-            //         <h1 className="text-center">PROFILE</h1>
-            //       </div>
-            //       <table className="table col-md-6 mx-auto">
-            //         <tbody>
-            //           <tr>
-            //             <td>Email</td>
-            //             <td>{this.state.email}</td>
-            //           </tr>
-            //         </tbody>
-            //       </table>
-            //     </div>
-            //   </div>
-        )
+            <div>
+                <h1>Claim a Donation</h1>
+                <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
+                <Card ClaimDonation={this.ClaimDonation}></Card>
+            </div>
+        );
     }
-}
 
+}
 
 export default AvailableDonations;
