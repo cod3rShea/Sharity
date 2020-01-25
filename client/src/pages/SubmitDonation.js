@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-
 import axios from "axios";
-import Input from "../components/Input"; 
-import TextArea from "../components/TextArea";
-import Select from "../components/Select";
-import FormBtn from "../components/FormBtn"; 
+import { Input, TextArea, Select, FormBtn } from "../components/DonationSubmissionForm";
 
-class SubmitDonation extends Component {
+class donate extends Component {
     state = {
         foodItemDescription: "",
         amount: "",
@@ -43,15 +39,16 @@ class SubmitDonation extends Component {
         });
     };
 
+
     render() {
         return (
             <form>
                 <Input
                     type="text"
-                    label="Food Item Description"
+                    label="FoodItemDescription"
                     defaultValue={this.state.foodItemDescription}
                     onChange={this.handleInputChange}
-                    name="Food Item Description"
+                    name="foodItemDescription"
                     placeholder="Food Item Description"
                 />
                 <Input
@@ -63,14 +60,14 @@ class SubmitDonation extends Component {
                 <Select
                     defaultValue={this.state.storageReqs}
                     onChange={this.handleInputChange}
-                    name="Storage Requirements"
+                    name="storageReqs"
                     placeholder="Storage Requirements"
                 />
                 <Input
                     type="date"
                     defaultValue={this.state.pickUpDeadline}
                     onChange={this.handleInputChange}
-                    name="Pick Up Deadline"
+                    name="pickUpDeadline"
                     placeholder="Pick Up Deadline"
                 />
                 <Input
@@ -78,17 +75,17 @@ class SubmitDonation extends Component {
                     pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                     defaultValue={this.state.dollarValue}
                     onChange={this.handleInputChange}
-                    name="Dollar Value"
+                    name="dollarValue"
                     placeholder="Dollar Value"
                 />
                 <TextArea
                     defaultValue={this.state.donationComments}
                     onChange={this.handleInputChange}
-                    name="Donation Comments"
+                    name="donationComments"
                     placeholder="Any comments about this donation?"
                 />
                 <FormBtn
-                    disabled={!(this.state.foodItemDescription && this.state.amount && this.state.pickUpDeadline)}
+                    // disabled={!(this.state.foodItemDescription && this.state.amount && this.state.pickUpDeadline)}
                     onClick={this.donateFormSubmit}
                 >
                     Submit Donation
@@ -99,4 +96,4 @@ class SubmitDonation extends Component {
 
 };
 
-export default SubmitDonation;
+export default donate;

@@ -1,47 +1,61 @@
+// bcrypt used for password hashing. use bcryptjs version as the regular bcrypt module can cause errors on Windows machines
+var bcrypt = require("bcryptjs");
+// create User model
 module.exports = function (sequelize, DataTypes) {
     var Inventory = sequelize.define("Inventory", {
+        // email cannot be null and must be proper email
+        //user ID how do I use
         foodItemDescription: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true
         },
-        amout: {
+
+        amount: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true
         },
-        otherComments: {
+        
+        donationComments: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        storageRequirements: {
+
+        storageReqs: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
         pickUpDeadline: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
         vendorId: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        isActive: {
+
+        isClaimed: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true,
+            default: false
         },
+
         claimedBy: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
+
         dollarValue: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
+
         pickUpDate: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
+
     });
 
     return Inventory;
