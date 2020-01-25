@@ -8,8 +8,8 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         port: 3306,
         user: "root",
-        password: "root",
-        database: "sharity_db"
+        password: "root1234",
+        database: "sharity"
     });
     
 }
