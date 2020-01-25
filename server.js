@@ -37,8 +37,8 @@ app.use(express.static(__dirname + '/public/'));
 
 // Start the API server
 // 
-db.sequelize.sync( {force: true}  ).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
 });
