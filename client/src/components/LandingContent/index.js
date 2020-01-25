@@ -7,8 +7,10 @@ class LandingContent extends Component {
       <div className="Home">
         <div className="jumbotron mt-5">
           <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">Welcome to Sharity!</h1>
             
+            <h1 className="text-center">Menu to Share: Rescue Food, Feed People</h1>
+            <h2> It's simple: if it’s good enough to eat, it shouldn’t go to waste-because everybody deserves healthy fresh food.
+!</h2>
             <Link to="/sign-in">
             <button
                 type="submit"

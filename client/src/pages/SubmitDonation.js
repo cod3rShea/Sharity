@@ -45,7 +45,7 @@ class SubmitDonation extends Component {
 
     render() {
         return (
-            <form>
+            <form className = "container">
                 <Input
                     type="text"
                     label="Food Item Description"

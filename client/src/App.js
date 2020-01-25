@@ -18,6 +18,7 @@ import SignIn from "./pages/SignIn";
 import UserRegistration from "./pages/UserRegistration";
 
 import RegisterUser from "./components/RegisterUser";
+import './App.css';
 
 function App() {
   return (
