@@ -53,9 +53,9 @@ function Nav() {
           </li>
           <li className="nav-item">
             <Link
-              to="/donations"
+              to="/available-donations"
               className={
-                window.location.pathname === "/donations" || window.location.pathname === "/donations"
+                window.location.pathname === "/available-donations" || window.location.pathname === "/available-donations"
                   ? "nav-link active"
                   : "nav-link"
               }
