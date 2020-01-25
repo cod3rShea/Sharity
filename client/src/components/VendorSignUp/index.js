@@ -1,7 +1,9 @@
 import React from "react";
 
-function VendorSignUp() {
+class VendorSignUp extends React.Component {
+    render() {
  return (
+     
         <div className="create_business_registration">
             <div className="card-header bg-primary text-white">
           <h1>Create account</h1>
@@ -108,7 +110,7 @@ function VendorSignUp() {
       );
     
 }
-
+}
   
   export default VendorSignUp;
       
