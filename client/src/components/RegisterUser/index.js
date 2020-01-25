@@ -93,6 +93,7 @@ class RegisterUser extends Component {
               }
 
               <button
+              
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
               >

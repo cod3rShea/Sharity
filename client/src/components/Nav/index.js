@@ -11,34 +11,7 @@ function Nav() {
       </Link>
       <div>
         <ul className="navbar-nav">
-        <li className="nav-item">
-            <Link
-              to="/register"
-              className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"}
-            >
-              Register
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/submit-donations"
-              className={window.location.pathname === "/submit-donations" ? "nav-link active" : "nav-link"}
-            >
-              Donations Form
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/Login"
-              className={
-                window.location.pathname === "/login" || window.location.pathname === "/login"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Login
-            </Link>
-          </li>
+          
 		  <li className="nav-item">
             <Link
               to="/profile"
@@ -49,6 +22,14 @@ function Nav() {
               }
             >
               Profile
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/submit-donations"
+              className={window.location.pathname === "/submit-donations" ? "nav-link active" : "nav-link"}
+            >
+              Donations Form
             </Link>
           </li>
           <li className="nav-item">

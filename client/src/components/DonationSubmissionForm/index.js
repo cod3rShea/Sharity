@@ -1,5 +1,6 @@
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import DonationSubmissionForm from "../components/DonationSubmissionForm";
 
 
 class DonationSubmissionForm extends Component {
@@ -43,7 +44,7 @@ class DonationSubmissionForm extends Component {
                         </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form >
             </div>
         );

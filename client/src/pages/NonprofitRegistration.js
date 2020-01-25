@@ -1,5 +1,4 @@
 import React from "react";
-
 import NonprofitSignUp from "../components/NonprofitSignUp";
 
 function NonprofitRegistration() {
