@@ -1,111 +1,149 @@
 import React from "react";
+import { login } from './../UserFunctions'; 
+
+import './style.css';
 
 class VendorSignUp extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: '',
+            lastName: '',
+            title: '', 
+            email: '',
+            phoneNumber: '',
+            companyName: '',
+            companyWebsite: '', 
+            ein: '',
+            vendorId: '', 
+            companyAddress: '',
+            companyZip: '',
+            companyCity: '',
+            companyState: '',
+            companyCountry: '',
+            password: '',
+            refigeration: '', 
+            dropoff: '',
+        }
+
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    }
+    
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
+    onSubmit(e) {
+        e.preventDefault()
+        const resturantVendor = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            title: this.state.title,
+            email: this.state.email,
+            phoneNumber: this.state.phoneNumber,
+            companyName: this.state.companyName,
+            companyWebsite: this.state.companyWebsite, 
+            ein: this.state.ein,
+            vendorId: this.state.vendorId, 
+            companyAddress: this.state.companyAddress,
+            companyZip: this.state.companyZip,
+            companyCity: this.state.companyCity,
+            companyState: this.state.companyState,
+            companyCountry: this.state.companyCountry,
+            password: this.state.password,
+            refigeration: this.state.refigeration, 
+            dropoff: this.state.dropoff
+        }
+
+        // signup(resturantVendor).then(res => {
+        //   if (res) {
+        //     this.props.history.push(`/profile`)
+        //   }
+        // })
+      }
+
+
+
     render() {
- return (
-     
-        <div className="create_business_registration">
-            <div className="card-header bg-primary text-white">
-          <h1>Create account</h1>
+        return (
+            <div className="create_business_registration">
+                <div className="card-header bg-primary text-white">
+                    <h1>Create account</h1>
 
-          <form className="form">
-          <h2>Contact Information</h2>
-            <label>
-                First Name:
-                <input type="text" name="firstName" value=""/>
-            </label>
-            
-            <label>
-                Last Name:
-                <input type="text" name="lastName" value=""/>
-            </label>
-            
-            <label>
-                Title:
-            <input type="text" name="title" value="" />
-            </label>
-            
-            <label>
-                Email:
-                <input type="text" name="email" value="" />
-            </label>
-            
-            <label>
-                Phone Number:
-                <input type="text" name="phoneNumber" value="" />
-            </label>
-            
-            <h3> Nonprofit Information</h3>
-            <label>
-                Company Name:
-                <input type="text" name="companyName" value="" />
-            </label>
-            
-            <label>
-                Company Website:
-            <input type="text" name="companyWebsite" value="" />
-            </label>
-            
-            <label>
-                Vendor ID:
-                <input type="text" name="vendorID" value="" />
-            </label>
-            
-            <label>
-                Password:
-                <input type="text" name="password" value="" />
-            </label>
-
-            <label>
-                EIN:
-                <input type="text" name="ein" value="" />
-            </label>
-
-            <label>
-                   Company Address:
-                   <input type="text" name="street" value="" />
-                   <input type="text" name="city" value="" />
-                   <input type="text" name="state" value="" />
-                   <input type="text" name="zip" value="" />
-                   <input type="text" name="country" value="" />
-               </label>
-               
-               <label>
-                   Will any items require refigeration?
-                   <select>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                   </select>
-               </label>
-               
-               <div>
-                   What catagory of food will you be donating?
-                   
-                    <input type="checkbox" id="produce" name="produce"/>
-                    <input type="checkbox" id="dairy" name="dairy"/>
-                    <input type="checkbox" id="meat" name="meat"/>
-                    <input type="checkbox" id="grain" name="grain"/>
-                    <input type="checkbox" id="cannedItems" name="cannedItems"/>
-                    <input type="checkbox" id="boxedItems" name="boxedItems"/>
-                    <input type="checkbox" id="other" name="other"/>
-               </div>
-
-               <label>
-                   Do you have anyone on your team that can dropoff the food order?
-                   <select>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                   </select>
-               </label>
-
-        </form>  
-            <button 
-              type="submit" 
-              className="button button_wide">
-              CREATE ACCOUNT
-            </button>
-      
-        </div> 
+                    <form className="form-group">
+                        <h2>Contact Information</h2>
+                        <div>
+                            <label>First Name:</label>
+                            <input className="resturant-input" type="text" name="firstName" value={this.state.firstName} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Last Name:</label>
+                            <input className="resturant-input" type="text" name="lastName" value={this.state.lastName} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Title:</label>
+                            <input className="resturant-input" type="text" name="title" value={this.state.title} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email:</label>
+                            <input className="resturant-input" type="text" name="email" value={this.state.email} onChange={this.onChange}/>
+                        </div>    
+                        <div>
+                            <label htmlFor="phoneNumber">Phone Number:</label>
+                            <input className="resturant-input" type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.onChange}/>
+                        </div>
+                        <h3> Nonprofit Information</h3>
+                        <div>
+                            <label htmlFor="companyName">Company Name:</label>
+                            <input className="resturant-input" type="text" name="companyName" value={this.state.companyName} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Company Website:</label>
+                            <input className="resturant-input" type="text" name="companyWebsite" value={this.state.companyWebsite} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Vendor ID:</label>
+                            <input className="resturant-input" type="text" name="vendorId" value={this.state.vendorId} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <input className="resturant-input" type="text" name="password" value={this.state.password} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>EIN:</label>
+                            <input className="resturant-input" type="text" name="ein" value={this.state.ein} onChange={this.onChange} />
+                        </div>
+                        <div>
+                            <label>Company Address:</label>
+                            <input className="address-input" type="text" name="companyAddress" value={this.state.companyAddress} onChange={this.onChange}/>
+                            <input className="address-input" type="text" name="companyCity" value={this.state.companyCity} onChange={this.onChange}/>
+                            <input className="address-input" type="text" name="companyState" value={this.state.companyState} onChange={this.onChange}/>
+                            <input className="address-input" type="text" name="companyZip" value={this.state.companyZip} onChange={this.onChange}/>
+                            <input className="address-input" type="text" name="companyCountry" value={this.state.companyCountry} onChange={this.onChange}/>
+                        </div>
+                        <div>
+                            <label>Will any items require refigeration?</label>
+                            <select value={this.state.refigeration}>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div className ="drop-off-section">
+                            <label>Do you have anyone on your team that can dropoff the food order?</label>
+                            <select value={this.state.dropoff}>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </form>  
+                <button 
+                type="submit" 
+                className="button button_wide">
+                CREATE ACCOUNT
+                </button>
+            </div> 
         </div>
       );
     
@@ -113,4 +151,3 @@ class VendorSignUp extends React.Component {
 }
   
   export default VendorSignUp;
-      
