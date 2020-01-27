@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import axios from "axios"
+import React from 'react'
 import ClaimBtn from "../ClaimButton/index"
 
 function Card(props) {
@@ -19,13 +18,6 @@ function Card(props) {
                 </ClaimBtn>
             </div>
         </div>
-
-        // <div className="card text-center">
-        //     <div className="card-header">
-        //         <h2>{props.heading}This is h2</h2>
-        //     </div>
-        //     <div className="card-body">{props.children}This is the body</div>
-        // </div>
     );
 }
 
