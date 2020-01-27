@@ -42,7 +42,7 @@ class donate extends Component {
 
     render() {
         return (
-            <form className = "container">
+            <form>
                 <Input
                     type="text"
                     label="FoodItemDescription"
