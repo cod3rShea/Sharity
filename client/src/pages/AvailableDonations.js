@@ -1,7 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Card from "../components/Card/index";
 import CardHolder from "../components/CardHolder/index"
-import ClaimBtn from "../components/ClaimButton/index"
 import axios from "axios"
 
 
