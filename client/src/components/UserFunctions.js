@@ -30,18 +30,3 @@ export const login = user => {
       console.log(err)
     })
 }
-
-export const signup = vendor => {
-  return axios
-  .post('users/login', {
-    
-  })
-  .then(response => {
-    localStorage.setItem('usertoken', response.data)
-    return response.data
-  })
-  .catch(err => {
-    console.log("Your username or password was not correct");
-    console.log(err)
-  })
-}

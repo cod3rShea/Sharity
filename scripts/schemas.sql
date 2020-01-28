@@ -1,7 +1,7 @@
 
   --  create the database--
 
-CREATE  SHARITY;
+CREATE  sharity;
 
 
 --use database to create tables
@@ -19,32 +19,38 @@ CREATE TABLE USERS (
   PRIMARY KEY (userId)
 );
 
-vendor table
-USE sharity;
-
-CREATE TABLE vendor (
-  userId INT NOT NULL,
-  businessName VARCHAR(100)NOT NULL,
-  URL  VARCHAR(100),
-  EIN  VARCHAR(20) NOT NULL,
-  email VARCHAR(50)NOT NULL,
-  phone VARCHAR(20) NOT NULL,
-  businessType VARCHAR(50)NOT NULL,
-storageReqs VARCHAR(50) NOT NULL
-);
-
-
 --address table--
 USE sharity;
 
 CREATE TABLE LocationAddress (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userId INT NOT NULL,
 	streetAddress VARCHAR(100) NOT NULL,
-	City VARCHAR(50) NOT NULL,
-	State VARCHAR(2) NOT NULL,
-	ZIP  INT(10) NOT NULL,
-    COUNTRY VARCHAR(50) NOT NULL
-  
+	city VARCHAR(50) NOT NULL,
+	state VARCHAR(2) NOT NULL,
+	zip  INT(10) NOT NULL,
+  country VARCHAR(50) NOT NULL  
+);
+
+--vendor table--
+USE sharity;
+
+CREATE TABLE vendor (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  businessName VARCHAR(100)NOT NULL,
+  businessWebsite  VARCHAR(100),
+  userId INT,
+  addressId INT,
+  EIN  VARCHAR(20) NOT NULL,
+  email VARCHAR(50)NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  businessType VARCHAR(50)NOT NULL,
+  storageReqs BOOLEAN,
+  dropoff BOOLEAN
+  FOREIGN KEY (userId)
+  REFERENCES USERS(userId)
+  FOREIGN KEY (addressId)
+  REFERENCES LocationAddress(id)
 );
 
 --BUyers table--

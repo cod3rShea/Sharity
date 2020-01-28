@@ -18,9 +18,11 @@ app.use(
 
 var Users = require('./routes/users')
 var Donations = require('./routes/api/donations')
+var Vendors = require('./routes/api/vendors')
 
 app.use('/users', Users)
 app.use('/api', Donations)
+app.use('/vendors', Vendors)
 
 // Define middleware here
 app.use(express.urlencoded({

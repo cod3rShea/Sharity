@@ -1,5 +1,5 @@
 import React from "react";
-import { login } from './../UserFunctions'; 
+import axios from "axios";
 
 import './style.css';
 
@@ -16,7 +16,6 @@ class VendorSignUp extends React.Component {
             companyName: '',
             companyWebsite: '', 
             ein: '',
-            vendorId: '', 
             companyAddress: '',
             companyZip: '',
             companyCity: '',
@@ -46,22 +45,19 @@ class VendorSignUp extends React.Component {
             companyName: this.state.companyName,
             companyWebsite: this.state.companyWebsite, 
             ein: this.state.ein,
-            vendorId: this.state.vendorId, 
             companyAddress: this.state.companyAddress,
             companyZip: this.state.companyZip,
             companyCity: this.state.companyCity,
             companyState: this.state.companyState,
             companyCountry: this.state.companyCountry,
             password: this.state.password,
-            refigeration: this.state.refigeration, 
+            refrigeration: this.state.refrigeration, 
             dropoff: this.state.dropoff
         }
-
-        // signup(resturantVendor).then(res => {
-        //   if (res) {
-        //     this.props.history.push(`/profile`)
-        //   }
-        // })
+            axios.post('vendors/register', resturantVendor)
+            .then(function(response) {
+                console.log(response);
+            })
       }
 
 
@@ -72,7 +68,7 @@ class VendorSignUp extends React.Component {
                 <div className="card-header bg-primary text-white">
                     <h1>Create account</h1>
 
-                    <form className="form-group">
+                    <form className="form-group" onSubmit={this.onSubmit}>
                         <h2>Contact Information</h2>
                         <div>
                             <label>First Name:</label>
@@ -104,10 +100,6 @@ class VendorSignUp extends React.Component {
                             <input className="resturant-input" type="text" name="companyWebsite" value={this.state.companyWebsite} onChange={this.onChange}/>
                         </div>
                         <div>
-                            <label>Vendor ID:</label>
-                            <input className="resturant-input" type="text" name="vendorId" value={this.state.vendorId} onChange={this.onChange}/>
-                        </div>
-                        <div>
                             <label>Password:</label>
                             <input className="resturant-input" type="text" name="password" value={this.state.password} onChange={this.onChange}/>
                         </div>
@@ -125,24 +117,25 @@ class VendorSignUp extends React.Component {
                         </div>
                         <div>
                             <label>Will any items require refigeration?</label>
-                            <select value={this.state.refigeration}>
+                            <select value={this.state.refigeration} onChange={this.onChange}>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
                         </div>
                         <div className ="drop-off-section">
                             <label>Do you have anyone on your team that can dropoff the food order?</label>
-                            <select value={this.state.dropoff}>
+                            <select value={this.state.dropoff} onChange={this.onChange}>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
                         </div>
-                    </form>  
-                <button 
+                        <button 
                 type="submit" 
                 className="button button_wide">
                 CREATE ACCOUNT
                 </button>
+                    </form>  
+
             </div> 
         </div>
       );
