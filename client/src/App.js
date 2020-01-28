@@ -14,9 +14,7 @@ import SubmitDonation from "./pages/SubmitDonation";
 import VendorHome from "./pages/VendorHome";
 import NonprofitHome from "./pages/NonprofitHome";
 import SignIn from "./pages/SignIn";
-
 import UserRegistration from "./pages/UserRegistration";
-
 import RegisterUser from "./components/RegisterUser";
 
 function App() {

@@ -38,13 +38,14 @@ donations.post("/inventory", function(req, res) { // I want to save donation lis
 
 // get request to pull all available donations
 donations.get('/inventory', function(req, res) {
-    db.Inventory.findOne({
+    console.log("Made it");
+    db.Inventory.findAll({
         where: {
-            isClaimed: false
+            isClaimed: null
         }
     })
     .then(function (response) {
-        console.log(response);
+        res.send(response);
     })
     .catch(function (error) {
         console.log(error);
