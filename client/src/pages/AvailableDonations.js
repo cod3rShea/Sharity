@@ -63,9 +63,11 @@ class AvailableDonations extends Component {
                 <div>
                     <ul>
                         {submission.map(item => (
-                            <li key={item.id}>
-                                {item.foodItemDescription}
-                            </li>
+                            <Card>
+                                <li key={item.id}>
+                                    {item.foodItemDescription}
+                                </li>
+                            </Card>
                         ))}
                     </ul>
                 
