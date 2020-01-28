@@ -29,6 +29,7 @@ h1 {
 
 h2 {
     font-size: 25px;
+    margin-top: 20px;
 }
 
 h3 {
@@ -76,6 +77,9 @@ p {
     background-color: #0b9a73;
 }
 
+.App-link {
+    margin-right: 10px;
+}
 /* Nav */
 
 .navbar {

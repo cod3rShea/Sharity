@@ -101,10 +101,12 @@ class AvailableDonations extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <h1>Claim a Donation</h1>
-                    <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-10 mt-5 mx-auto">
+                        <h1>Claim a Donation</h1>
+                        <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
+                    </div>
                 </div>
                 <div>
                     <CardHolder {...this.CreateCard}></CardHolder>
