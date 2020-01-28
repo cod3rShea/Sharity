@@ -31,6 +31,7 @@ function App() {
           <Route exact path="/nonprofit-home" component={NonprofitHome}/>
           <Route exact path="/about" component={About} />
           <Route exact path="/pickups" component={Pickups} />
+          <Route exact path="/donations" component={AvailableDonations}/>
           <Route exact path="/available-donations" component={AvailableDonations}/>
           <Route exact path="/submit-donations" component={SubmitDonation}/>
           <Route exact path="/user-registration" component={UserRegistration}/>

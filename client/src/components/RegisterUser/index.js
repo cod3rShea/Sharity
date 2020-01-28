@@ -32,7 +32,7 @@ class RegisterUser extends Component {
     }
 
     register(newUser).then(res => {
-      this.props.history.push(`/login`)
+      this.props.history.push(`/restaurant-register`)
     })
   }
 
@@ -96,7 +96,7 @@ class RegisterUser extends Component {
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
               >
-                Register!
+                Next Step
               </button>
             </form>
           </div>
