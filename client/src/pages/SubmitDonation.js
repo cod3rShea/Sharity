@@ -42,55 +42,68 @@ class donate extends Component {
 
     render() {
         return (
-            <form>
-                <Input
-                    type="text"
-                    label="FoodItemDescription"
-                    defaultValue={this.state.foodItemDescription}
-                    onChange={this.handleInputChange}
-                    name="foodItemDescription"
-                    placeholder="Food Item Description"
-                />
-                <Input
-                    defaultValue={this.state.amount}
-                    onChange={this.handleInputChange}
-                    name="amount"
-                    placeholder="Amount"
-                />
-                <Select
-                    defaultValue={this.state.storageReqs}
-                    onChange={this.handleInputChange}
-                    name="storageReqs"
-                    placeholder="Storage Requirements"
-                />
-                <Input
-                    type="date"
-                    defaultValue={this.state.pickUpDeadline}
-                    onChange={this.handleInputChange}
-                    name="pickUpDeadline"
-                    placeholder="Pick Up Deadline"
-                />
-                <Input
-                    type="currency"
-                    pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-                    defaultValue={this.state.dollarValue}
-                    onChange={this.handleInputChange}
-                    name="dollarValue"
-                    placeholder="Dollar Value"
-                />
-                <TextArea
-                    defaultValue={this.state.donationComments}
-                    onChange={this.handleInputChange}
-                    name="donationComments"
-                    placeholder="Any comments about this donation?"
-                />
-                <FormBtn
-                    // disabled={!(this.state.foodItemDescription && this.state.amount && this.state.pickUpDeadline)}
-                    onClick={this.donateFormSubmit}
-                >
-                    Submit Donation
-                </FormBtn>
-            </form>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 mt-5 mx-auto">
+                        <h1>Submit a Donation</h1>
+                        <p>Submit the form below to create an available donation for non-profits to pickup.</p>
+                        <form>
+                            <label>Type of Food</label>
+                            <Input
+                                type="text"
+                                label="FoodItemDescription"
+                                defaultValue={this.state.foodItemDescription}
+                                onChange={this.handleInputChange}
+                                name="foodItemDescription"
+                                placeholder="Food Description"
+                            />
+                            <label>How much of that item will you be donating?</label>
+                            <Input
+                                defaultValue={this.state.amount}
+                                onChange={this.handleInputChange}
+                                name="amount"
+                                placeholder="Amount"
+                            />
+                            <label>How should this food be stored?</label>
+                            <Select
+                                defaultValue={this.state.storageReqs}
+                                onChange={this.handleInputChange}
+                                name="storageReqs"
+                                placeholder="Storage Requirements"
+                            />
+                            <label>Pick Up Deadline</label>
+                            <Input
+                                type="date"
+                                defaultValue={this.state.pickUpDeadline}
+                                onChange={this.handleInputChange}
+                                name="pickUpDeadline"
+                            />
+                            <label>Dollar Value</label>
+                            <Input
+                                type="currency"
+                                // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                                defaultValue={this.state.dollarValue}
+                                onChange={this.handleInputChange}
+                                name="dollarValue"
+                                placeholder="$"
+                            />
+                            <label>Comments/Notes</label>
+                            <TextArea
+                                defaultValue={this.state.donationComments}
+                                onChange={this.handleInputChange}
+                                name="donationComments"
+                                placeholder="Any comments about this donation?"
+                            />
+                            <FormBtn
+                                // disabled={!(this.state.foodItemDescription && this.state.amount && this.state.pickUpDeadline)}
+                                onClick={this.donateFormSubmit}
+                            >
+                                Submit Donation
+                            </FormBtn>
+                        </form>
+                    </div>
+                </div>
+            </div>
         );
     }
 

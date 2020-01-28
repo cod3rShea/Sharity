@@ -1,6 +1,6 @@
 import React from "react";
 
-function FormBtn(props) {
+function ClaimBtn(props) {
     return (
         <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
         {props.children}
@@ -8,4 +8,4 @@ function FormBtn(props) {
     );
 }
 
-export default FormBtn;
+export default ClaimBtn;

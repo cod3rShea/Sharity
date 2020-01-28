@@ -44,7 +44,7 @@ class UserRegistrationContent extends Component {
               <Link to="/register-user">
               <button 
                 type="submit"
-                className="btn btn-lg btn-primary btn-block"
+                className="btn btn-lg btn-blue btn-block"
               >
                I'm a Restaurant
               </button>
@@ -52,7 +52,7 @@ class UserRegistrationContent extends Component {
               <Link to="/register-nonprofit">
               <button disabled
                 type="submit"
-                className="btn btn-lg btn-primary btn-block"
+                className="btn btn-lg btn-green btn-block"
               >
                I'm a Non-Profit
               </button>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Card from "../components/Card/index";
 import CardHolder from "../components/CardHolder/index"
 import ClaimBtn from "../components/ClaimButton/index"
@@ -26,7 +26,8 @@ class AvailableDonations extends Component {
                 // console.log(res.data[0].foodItemDescription);
 
                 this.setState(
-                    this.donationSubmission = [
+
+                   this.donationSubmission = [
                         res.data[0].foodItemDescription,
                         res.data[0].amount,
                         res.data[0].donationComments,
@@ -111,6 +112,16 @@ class AvailableDonations extends Component {
                 </div>
             </div>
         )
+        //         <h1>Claim a Donation</h1>
+        //         <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
+        //         <Card ClaimDonation={this.ClaimDonation}
+        //         // {this.state.donations.map((donation) => {
+        //         //     return <div>{donation.foodItemDescription} {donation.amount} {donation.donationComments}
+        //         // {donation.storageReqs} {donation.isClaimed}</div>
+        //         // })}
+        //         ></Card>
+        //     </div>
+        // );
     }
 
 }

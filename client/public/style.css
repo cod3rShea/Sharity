@@ -55,8 +55,72 @@ p {
 }
 
 
-.green-button {
+.btn:hover {
+    color: #fff; 
+    text-decoration: none;
+}
+
+.btn-green {
     background-color: #09BC8A;
     color: #fff;
     margin-top: 20px;
 }
+
+.btn-blue {
+    background-color: #3066BE;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.btn-green:hover {
+    background-color: #0b9a73;
+}
+
+/* Nav */
+
+.navbar {
+    background-image: url('../images/sharity-nav.png');
+    background-size: cover;
+    background-color:#F25F5C;
+    justify-content: unset;
+}
+
+.navbar span{
+    color: #fff;
+}
+
+.navbar-nav a.nav-link {
+    padding-left: 20px;
+}
+
+li.nav-item:hover {
+    background: #007bff;
+}
+
+li.nav-item a:hover {
+    color: #fff;
+}
+
+/* Home */
+
+.home .jumbotron {
+    background-color: unset;
+}
+
+a.sign-in {
+    margin: 20px 0;
+    display: block;
+}
+
+a.sign-in:hover,
+a.user-registration:hover {
+    text-decoration: none;
+}
+
+/* 
+
+@media screen and (max-width: 600px) {
+    div#navbarTogglerDemo02 {
+      display: none;
+    }
+  } */
