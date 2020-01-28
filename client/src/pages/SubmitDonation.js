@@ -2,21 +2,25 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Input, TextArea, Select, FormBtn } from "../components/DonationSubmissionForm";
 
-class donate extends Component {
-    state = {
-        foodItemDescription: "",
-        amount: "",
-        donationComments: "",
-        storageReqs: "",
-        pickUpDeadline: "",
-        dollarValue: "",
-        isClaimed: false
+class Donate extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            foodItemDescription: "",
+            amount: "",
+            donationComments: "",
+            storageReqs: "",
+            pickUpDeadline: "",
+            dollarValue: "",
+            isClaimed: false
+        }
     }
+
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
+            [name]: value
         });
     };
 
@@ -31,12 +35,12 @@ class donate extends Component {
             dollarValue: this.state.dollarValue,
             isClaimed: false
         })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .then((response) => {
+                this.props.history.push('/donations');
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
 
@@ -96,4 +100,4 @@ class donate extends Component {
 
 };
 
-export default donate;
+export default Donate;
