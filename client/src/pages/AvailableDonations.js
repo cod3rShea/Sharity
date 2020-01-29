@@ -53,13 +53,11 @@ class AvailableDonations extends Component {
                                     <div className="card-header">
                                         <h2>{item.foodItemDescription}</h2>
                                     </div>
-                                    <div className="card-body">{item.amount}
-                                        <p><strong>Storage Requirements: </strong>
-                                        {item.storageReqs}</p>
-                                        <br></br>
-                                        Donation Comments: {item.donationComments}
-                                        <br></br>
-                                        Pick Up Deadline: {item.pickUpDeadline}
+                                    <div className="card-body">
+                                        <p><strong>Donation Amount: </strong>{item.amount}</p>
+                                        <p><strong>Storage Requirements: </strong>{item.storageReqs}</p>
+                                        <p><strong>Donation Comments: </strong>{item.donationComments}</p>
+                                        <p><strong>Pick Up Deadline: </strong>{item.pickUpDeadline}</p>
                                         <ClaimBtn
                                             onClick={item.ClaimDonation}
                                         >Claim Donation
