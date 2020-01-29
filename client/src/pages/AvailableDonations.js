@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-import Card from "../components/Card/index";
-import CardHolder from "../components/CardHolder/index"
+// import Card from "../components/Card/index";
+// import CardHolder from "../components/CardHolder/index"
+import ClaimBtn from "../components/ClaimButton"
+import history from "../pages/SubmitDonation"
 import axios from "axios"
 
 
 class AvailableDonations extends Component {
     state = {
         donationSubmission: []
-            // foodItemDescription,
-            // amount,
-            // donationComments,
-            // storageReqs,
-            // isClaimed
     }
 
     componentDidMount() {
@@ -21,69 +18,13 @@ class AvailableDonations extends Component {
             }
         })
             .then(res => {
-                // console.log(res.data[0]);
-                // console.log(res.data[0].foodItemDescription);
-
-                this.setState(
-
-                   this.donationSubmission = [
-                        res.data[0].foodItemDescription,
-                        res.data[0].amount,
-                        res.data[0].donationComments,
-                        res.data[0].storageReqs,
-                        res.data[0].isClaimed,
-                        res.data[0].id
-                    ]
-                )
-                // console.log(this.donationSubmission);
-                this.CreateCard();
+                console.log(res.data)
+                this.setState({donationSubmission: res.data})
             })
             .catch(function (error) {
                 console.log(error);
             });
         
-    }
-
-    CreateCard() {
-        console.log(this.donationSubmission)
-        // const donationSubmission = this.donationSubmission;
-        // const info = donationSubmission.map((donationSubmission) =>
-        //     <li key={donationSubmission.id}>{donationSubmission}</li>
-        // );
-        // return (
-        //     <ul>{info}</ul>
-        // )
-        const submission = this.donationSubmission
-
-        return (
-            <div>
-                <div>
-                    <p>test</p>
-                </div>
-                <div>
-                    <ul>
-                        {submission.map(item => (
-                            <Card>
-                                <li key={item.id}>
-                                    {item.foodItemDescription}
-                                </li>
-                            </Card>
-                        ))}
-                    </ul>
-                
-                </div>
-            </div>
-        )
-
-        // this.donationSubmission.map(({donationSubmission}) =>
-        //     <Card >
-        //         <p>Title</p>
-        //         <div>{donationSubmission.foodItemDescription} {donationSubmission.amount} 
-        //             {donationSubmission.donationComments} {donationSubmission.storageReqs} 
-        //             {donationSubmission.isClaimed}
-        //         </div>
-        //         <ClaimBtn ClaimDonation={this.ClaimDonation} ></ClaimBtn>
-        //     </Card>)
     }
 
     ClaimDonation = event => {
@@ -106,23 +47,36 @@ class AvailableDonations extends Component {
                     <div className="col-md-10 mt-5 mx-auto">
                         <h1>Claim a Donation</h1>
                         <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
+                        {this.state.donationSubmission.map((item, key) => (
+                            <div key={key}>
+                                <div className="card text-center">
+                                    <div className="card-header">
+                                        <h2>{item.foodItemDescription}</h2>
+                                    </div>
+                                    <div className="card-body">{item.amount}
+                                        <p><strong>Storage Requirements: </strong>
+                                        {item.storageReqs}</p>
+                                        <br></br>
+                                        Donation Comments: {item.donationComments}
+                                        <br></br>
+                                        Pick Up Deadline: {item.pickUpDeadline}
+                                        <ClaimBtn
+                                            onClick={item.ClaimDonation}
+                                        >Claim Donation
+                                        </ClaimBtn>
+                                    </div>
+                                </div>
+                            </div>
+                    ))}
                     </div>
                 </div>
                 <div>
-                    <CardHolder {...this.CreateCard}></CardHolder>
+                    {/* <CardHolder {...this.CreateCard}></CardHolder> */}
+
+                    
                 </div>
             </div>
         )
-        //         <h1>Claim a Donation</h1>
-        //         <p>Take a look at the local donations and claim a donation you would like to pick up.</p>
-        //         <Card ClaimDonation={this.ClaimDonation}
-        //         // {this.state.donations.map((donation) => {
-        //         //     return <div>{donation.foodItemDescription} {donation.amount} {donation.donationComments}
-        //         // {donation.storageReqs} {donation.isClaimed}</div>
-        //         // })}
-        //         ></Card>
-        //     </div>
-        // );
     }
 
 }

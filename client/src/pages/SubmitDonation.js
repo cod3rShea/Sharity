@@ -31,8 +31,8 @@ class donate extends Component {
             dollarValue: this.state.dollarValue,
             isClaimed: false
         })
-        .then(function (response) {
-            console.log(response);
+        .then((response) => {
+            this.props.history.push('/donations')
         })
         .catch(function (error) {
             console.log(error);

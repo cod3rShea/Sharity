@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Nav() {
 	return (
-		<>
-	<Link className="navbar-brand" to="/">
-				Home
-      </Link>
-			<nav class="navbar navbar-dark">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+		<div className="sticky-top">
+			<Link className="navbar-brand" to="/">
+				<img src="./images/Sharlogotr1.png" className="logo"></img> {}
+      		</Link>
+			<nav className="navbar navbar-dark">
+				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span className="navbar-toggler-icon"></span>
 				</button>
 				<span>Sharity</span>
 			</nav>
 
-			<div class="collapse" id="navbarToggleExternalContent">
+			<div className="collapse" id="navbarToggleExternalContent">
 				<ul className="navbar-nav">
 					<li className="nav-item">
 						<Link
@@ -93,7 +93,7 @@ function Nav() {
 
 				</ul>
 			</div>
-	</>
+		</div>
 	);
 }
 

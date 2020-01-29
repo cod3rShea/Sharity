@@ -24,7 +24,7 @@ donations.post("/inventory", function(req, res) { // I want to save donation lis
         dollarValue: req.body.dollarValue
     })
     .then(function() {
-        res.redirect("/confirmation");
+        res.redirect("/available-donations");
     })
     .catch(function(err) {
         console.log(err);
