@@ -4,15 +4,7 @@ const donations = express.Router();
 
 const db = require('../../models');
 
-donations.post("/inventory", function(req, res) { // I want to save donation list to an inventory
-    // Lets get the vendorId
-    // db.user.get('/profile', (req, res) => {
-
-    // });
-    // Once i have the vendor Id,
-    // attach to req.body.vendorId
-
-    // return post to db
+donations.post("/inventory", function(req, res) {
     
     db.Inventory.create({
         foodItemDescription: req.body.foodItemDescription,
@@ -21,20 +13,18 @@ donations.post("/inventory", function(req, res) { // I want to save donation lis
         storageReqs: req.body.storageReqs,
         pickUpDeadline: req.body.pickUpDeadline,
         // vendorId: req.body.vendorId,
-        dollarValue: req.body.dollarValue
+        dollarValue: req.body.dollarValue,
+        isClaimed: false
     })
+    res.send("thisis a test")
     .then(function() {
-        res.redirect("/available-donations");
+        console.log("donation entered into database");
     })
     .catch(function(err) {
         console.log(err);
         res.status(401).json(err);
     });
 });
-
-// donations.update("/inventory", function(req, res) { // I know what i have, and want to update fields
-
-// });
 
 // get request to pull all available donations
 donations.get('/inventory', function(req, res) {

@@ -21,12 +21,12 @@ export function Select(props) {
     return (
         <div className="form-group">
         <select className="form-control" {...props}>
-            <option value="Frozen">Frozen</option>
+            {/* <option value="Frozen">Frozen</option>
             <option value="Refrigerator">Refrigerator</option>
             <option value="Dry">Dry</option>
             <option value="Canned">Canned</option>
             <option value="Fresh Produce">Fresh Produce</option>
-            <option value="Prepared Food">Prepared Food</option>
+            <option value="Prepared Food">Prepared Food</option> */}
         </select>
         </div>
     );

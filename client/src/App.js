@@ -34,7 +34,6 @@ function App() {
           <Route exact path="/available-donations" component={AvailableDonations}/>
           <Route exact path="/submit-donations" component={SubmitDonation}/>
           <Route exact path="/user-registration" component={UserRegistration}/>
-          {/* bad naming */}
           <Route exact path="/register-user" component={RegisterUser}/>
         </Switch>
       </div>
