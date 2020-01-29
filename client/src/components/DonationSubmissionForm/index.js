@@ -22,11 +22,11 @@ export function Select(props) {
         <div className="form-group">
         <select className="form-control" {...props}>
             <option value="Frozen">Frozen</option>
-            <option value="no">Refrigerator</option>
-            <option value="no">Dry</option>
-            <option value="no">Canned</option>
-            <option value="no">Fresh Produce</option>
-            <option value="no">Prepared Food</option>
+            <option value="Refrigerator">Refrigerator</option>
+            <option value="Dry">Dry</option>
+            <option value="Canned">Canned</option>
+            <option value="Fresh Produce">Fresh Produce</option>
+            <option value="Prepared Food">Prepared Food</option>
         </select>
         </div>
     );
