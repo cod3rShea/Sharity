@@ -55,8 +55,12 @@ class VendorSignUp extends React.Component {
             dropoff: this.state.dropoff
         }
             axios.post('vendors/register', resturantVendor)
-            .then(function(response) {
-                console.log(response);
+            // .then(function(response) {
+            //     console.log(response);
+            // })
+            .then((response) => {
+                console.log("routing to next page")
+                this.props.history.push('/submit-donations')
             })
       }
 

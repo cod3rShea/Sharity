@@ -31,7 +31,7 @@ donations.get('/inventory', function(req, res) {
     console.log("Made it");
     db.Inventory.findAll({
         where: {
-            isClaimed: null
+            isClaimed: false
         }
     })
     .then(function (response) {

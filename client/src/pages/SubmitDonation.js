@@ -36,8 +36,7 @@ class Donate extends Component {
             isClaimed: false
         })
         .then((response) => {
-            console.log("working")
-            console.log(this)
+            console.log("routing to next page")
             this.props.history.push('/available-donations')
         })
         .catch(function (error) {
@@ -76,6 +75,7 @@ class Donate extends Component {
                                 onChange={this.handleInputChange}
                                 name="storageReqs"
                                 placeholder="Storage Requirements">
+                                <option value="None">Storage Requirement</option>
                                 <option value="Frozen">Frozen</option>
                                 <option value="Refrigerator">Refrigerator</option>
                                 <option value="Dry">Dry</option>
